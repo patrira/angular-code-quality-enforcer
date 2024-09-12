@@ -1,20 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../user.service';
 
+interface User {
+  name: string;
+  age: number;
+}
+
 @Component({
   selector: 'app-user-list',
-  template: `
-    <ul>
-      <li *ngFor="let user of users">{{ user.name }} ({{ user.age }})</li>
-    </ul>
-  `,
-  styles: [`
-    ul { list-style-type: none; padding: 0; }
-    li { margin-bottom: 10px; }
-  `]
+  templateUrl: './user-list.component.html',
+  styleUrls: ['./user-list.component.scss']
 })
 export class UserListComponent implements OnInit {
-  users!: any[];
+  users: User[] = []; // Use the defined User type
 
   constructor(private userService: UserService) {}
 

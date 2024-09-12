@@ -1,12 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-greetings',
-  standalone: true,
-  imports: [],
-  templateUrl: './greetings.component.html',
-  styleUrl: './greetings.component.css'
+  selector: 'app-hello-world',
+  template: `<h1>Hello, World!</h1>`,
+  styles: ['h1 { color: blue; }']
 })
-export class GreetingsComponent {
+export class HelloWorldComponent implements OnInit {
+  constructor() {}
 
+  ngOnInit(): void {
+    console.log('HelloWorldComponent initialized');
+  }
 }
