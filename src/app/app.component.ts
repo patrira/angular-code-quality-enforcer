@@ -2,11 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { UserListComponent } from './user-list/user-list.component';
 import { DemocomponentComponent } from './democomponent/democomponent.component';
 
-
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports:[UserListComponent, DemocomponentComponent],
+  imports: [UserListComponent, DemocomponentComponent],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })

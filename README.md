@@ -1,27 +1,35 @@
-# LintingFormattingPractice
+## Angular Code Quality Enforcer Lab
+# Project Description
+This project is focused on enforcing code quality and consistency using ESLint, Prettier, and Husky in an Angular application. The project implements a car rental system with components and services that adhere to strict linting, formatting, and testing practices.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.6.
+## Setup Instructions
+# 1. Install Dependencies
+Ensure you have Node.js and npm installed. Use npm install to install all project dependencies.
 
-## Development server
+# 2. Configure ESLint
+To enforce code quality, ESLint has been integrated into the project.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+ESLint Setup includes installing the necessary packages and creating a configuration file (.eslintrc.json) to extend the recommended Angular ESLint rules.
+Custom rules were added to enforce semicolons and warn against the use of console.log.
+# 3. Fixing Linting Errors
+After configuring ESLint, linting errors were detected and fixed, including:
 
-## Code scaffolding
+Implementing the OnInit lifecycle interface in components that use lifecycle methods.
+Replacing let with const where variables are not reassigned.
+Avoiding the use of any[] and replacing it with a properly defined interface for type safety.
+# 4. Integrate Prettier
+Prettier was configured to ensure consistent formatting across the codebase.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+A .prettierrc file was added to define Prettier's rules.
+Prettier was integrated with ESLint to avoid conflicts between formatting and linting.
+# 5. Setting Up Husky for Pre-Commit Hooks
+Husky was added to automatically run linting and formatting checks before every commit.
 
-## Build
+The prepare script was added to initialize Husky.
+A pre-commit hook was created to run linting and formatting before each commit, ensuring no bad code is committed.
+NPM Scripts
+The following npm scripts were added for easy linting, formatting, and testing:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Lint: Runs ESLint across the project to detect and fix linting errors.
+Format: Uses Prettier to automatically format the code.
+Lint-Fix: Combines both linting and formatting in one command to ensure code adheres to all rules.

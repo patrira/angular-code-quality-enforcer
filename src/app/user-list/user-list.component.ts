@@ -10,7 +10,7 @@ interface User {
 @Component({
   selector: 'app-user-list',
   standalone: true,
-  imports:[CommonModule],
+  imports: [CommonModule],
   templateUrl: './user-list.component.html',
   styleUrls: ['./user-list.component.css']
 })
